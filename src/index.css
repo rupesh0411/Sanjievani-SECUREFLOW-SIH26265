@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #101C35;
+  --color-navy-secondary: #192A49;
+  --color-blue: #356AE6;
+  --color-teal: #20B8A5;
+  --color-bg: #F5F7FB;
+  --color-surface: #FFFFFF;
+  --color-text-main: #182338;
+  --color-text-muted: #68758A;
+  --color-border: #E4E9F1;
+  --color-success: #16845B;
+  --color-warning: #D99520;
+  --color-danger: #D94F59;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+}
+
+/* Crisp technical grid */
+.bg-grid-subtle {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(228, 233, 241, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(228, 233, 241, 0.45) 1px, transparent 1px);
+}
+
+.bg-grid-dark {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F4F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(228, 233, 241, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(16, 28, 53, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Badge helpers */
+.badge-active {
+  @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+}
+.badge-pending {
+  @apply bg-amber-50 text-amber-700 border border-amber-200;
+}
+.badge-expiring {
+  @apply bg-orange-50 text-orange-700 border border-orange-200;
+}
+.badge-expired {
+  @apply bg-rose-50 text-rose-700 border border-rose-200;
+}
+.badge-released {
+  @apply bg-blue-50 text-blue-700 border border-blue-200;
+}
+.badge-renewed {
+  @apply bg-teal-50 text-teal-700 border border-teal-200;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
